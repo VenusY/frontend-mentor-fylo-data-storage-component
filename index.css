@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  background: url("images\\bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: white;
+}
+
+/* Layout */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  min-width: 330px;
+  max-width: 550px;
+  padding: 70px 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+  height: 50px;
+}
+
+#button-block {
+  width: 250px;
+  padding: 40px;
+  margin: 0 0 15px 0;
+}
+
+#logo {
+  margin-bottom: 30px;
+}
+
+#button-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.button:nth-child(n) {
+  margin-right: 15px;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
+
+#storage-information {
+  padding: 30px 35px;
+  padding-bottom: 35px;
+  position: relative;
+}
+
+#progress-bar {
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+  margin: 0 0 10px 0;
+}
+
+#progress-bar__gradient {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 81.5%;
+  box-sizing: border-box;
+  padding: 3px;
+}
+
+#progress-bar__dot {
+  width: 12px;
+  height: 12px;
+}
+
+#progress-bar__storage-capacity {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+#amount-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 130px;
+  height: 50px;
+  padding: 10px 25px;
+  margin: 0 auto;
+  position: absolute;
+  right: calc(50% - 90px);
+}
+
+#amount-left__number {
+  margin-right: 8px;
+}
+
+#storage-information > *:nth-child(n) {
+  margin-bottom: 20px;
+}
+
+#storage-information > *:last-child {
+  margin-bottom: 0;
+}
+/* Layout End */
+
+/* Styling */
+
+.button {
+  background: hsl(229, 57%, 11%);
+}
+
+#button-block {
+  background: hsl(228, 56%, 26%);
+  border-radius: 10px 100px 10px 10px;
+}
+
+#storage-information {
+  background: hsl(228, 56%, 26%);
+}
+
+#progress-bar {
+  background: #151f48;
+  border-radius: 1000px;
+}
+
+#progress-bar__gradient {
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 1000px;
+}
+
+#progress-bar__dot {
+  background: white;
+  border-radius: 50%;
+}
+
+#amount-left {
+  background: white;
+}
+
+.button,
+#storage-information,
+#amount-left {
+  border-radius: 10px;
+}
+
+/* Styling End */
+
+/* Typography */
+
+#amount-used-statement {
+  text-align: center;
+}
+
+#progress-bar__storage-capacity {
+  font-size: 13px;
+}
+
+#amount-left__number {
+  font-size: 40px;
+  color: black;
+}
+
+#amount-left__units {
+  font-size: 13px;
+  color: hsl(229, 7%, 55%);
+}
+
+#amount-used,
+#progress-bar__storage-capacity,
+#amount-left {
+  font-weight: 700;
+}
+
+/* Typography End */
+
+@media screen and (max-width: 420px) {
+  .container {
+    align-items: center;
+  }
+
+  #storage-information {
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 980px) and (max-height: 530px) {
+  .center {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  body {
+    background: url("images\\bg-desktop.png"), #0c122c;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+  }
+
+  /* Layout */
+
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+
+    width: auto;
+    min-width: none;
+    max-width: none;
+  }
+
+  #button-block {
+    flex-shrink: 0;
+
+    width: 250px;
+    margin: 0 30px 0 0;
+  }
+
+  #storage-information {
+    width: 500px;
+    padding: 40px;
+    padding-bottom: 20px;
+  }
+
+   #amount-left {
+    margin: 0 0 0 auto;
+    top: -45px;
+    right: 35px;
+  }
+
+  /* Layout End */
+
+  /* Styling */
+
+  #amount-left::before {
+    width: 0;
+    height: 0;
+    content: " ";
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    border: 20px solid;
+    border-color: #fff #fff transparent transparent;
+  }
+
+  /* Styling End */
+
+  /* Typography */
+
+  #amount-used-statement {
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 980px) and (max-height: 340px) {
+  .center {
+    height: auto;
+  }
+}
